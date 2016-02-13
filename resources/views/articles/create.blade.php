@@ -22,7 +22,7 @@
 	@endforeach
 	</ul>
 @endif
- 
+ja sam kralj 
 
 
 <script> 
