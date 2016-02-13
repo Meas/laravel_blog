@@ -1,9 +1,9 @@
 @extends ('app')
 @section ('content')
-	<h1> Write an article</h1>
+<h1>Edit: {!! $article->title !!}</h1>
 	<hr/>
 	<div style="margin:20px">
-		<form method="POST" action="{{ url('/articles') }}">
+		<form method="POST" action="{{ url('/articles/$article->id') }}" >
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<b>Title:</b><br>
 			<input type="text" name="title" id='title'><br><br>
@@ -35,4 +35,5 @@ var d = new Date();
 
 	document.getElementById('published_at').value = [year, month, day].join('-'); 
 </script>
+
 @stop

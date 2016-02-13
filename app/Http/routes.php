@@ -6,6 +6,7 @@ Route::get('articles', 'ArticlesController@index');
 
 Route::group(['middleware' => 'web'], function() {
 Route::get('articles/create', 'ArticlesController@create');
+Route::get('articles/{id}/edit', 'ArticlesController@edit');
 
 Route::post('articles', 'ArticlesController@store');
 });
