@@ -6,11 +6,17 @@ Route::get('articles', 'ArticlesController@index');
 
 Route::group(['middleware' => 'web'], function() {
 Route::get('articles/create', 'ArticlesController@create');
-Route::get('articles/{id}/edit', 'ArticlesController@edit');
+Route::get('articles/edit/{id}', 'ArticlesController@edit');
+Route::post('articles/update/{id}', 'ArticlesController@update');
 
 Route::post('articles', 'ArticlesController@store');
+Route::controllers ([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
 });
 Route::get('articles/{id}', 'ArticlesController@show');
+
 
 
 /*
