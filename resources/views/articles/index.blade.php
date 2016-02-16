@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts\app')
 @section('content')
 <h1 style='margin:10px;'>Articles</h1>
 <hr>

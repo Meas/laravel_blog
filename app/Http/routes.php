@@ -2,7 +2,7 @@
 
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
-Route::get('articles', 'ArticlesController@index');
+
 
 Route::group(['middleware' => 'web'], function() {
 Route::get('articles/create', 'ArticlesController@create');
@@ -14,8 +14,11 @@ Route::controllers ([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+Route::get('articles', 'ArticlesController@index'); /* ovaj bio ispod contacts*/
+Route::get('articles/{id}', 'ArticlesController@show'); /*ovaj bio na kraju skroz*/
+
 });
-Route::get('articles/{id}', 'ArticlesController@show');
+
 
 
 
