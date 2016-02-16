@@ -1,4 +1,4 @@
-			<input type="hidden" name='user_id' id='user_id' value='1'>
+
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<b>Title:</b><br>
 			<input type="text" name="title" id='title' value='{{$naslov}}'><br><br>
