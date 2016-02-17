@@ -4,7 +4,7 @@
 	<hr/>
 	<div style="margin:20px">
 		<form method="POST" action="{{ url('/articles') }}">
-			@include ('articles.form', ['submitButtonText' => 'Add Article', 'body' => '', 'naslov' => ''])
+			@include ('articles.form', ['submitButtonText' => 'Add Article', 'body' => '', 'naslov' => '', 'article' => 'false'])
 		</form>
 	</div>
 
