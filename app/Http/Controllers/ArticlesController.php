@@ -54,8 +54,9 @@ class ArticlesController extends Controller
     }
     public function edit($id)
     {
+        $tags = Tag::get();
         $article = Article::findOrFail($id);
-        return view('articles.edit', compact('article'));
+        return view('articles.edit', compact('article', 'tags'));
     }
     public function update($id, ArticleRequest $request) 
     {   

@@ -4,8 +4,8 @@
 	<article>
 		 {{ $article->body }}
 	</article><br>
-	@unless($article-tags->isEmpty())
-	<h5>Tags:</h5>
+	@unless($article->tags->isEmpty())
+	<h4>Tags:</h4>
 	<ul>
 	@foreach($article->tags as $tag)
 		<li> {{ $tag->name }}</li>
