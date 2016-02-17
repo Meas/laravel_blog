@@ -7,6 +7,12 @@
 			<b>Published on:</b><br>
 			<input style="width:1080px;" type="date" name="published_at" id="published_at"><br><br>
 			@foreach ($tags as $tag)
-			<input type="checkbox" name="tags[]" value="{{ $tag->id }}"> {{ $tag->name }}<br>
+				<?php $provjera=NULL;?>
+				@foreach($article->tags as $Atag)
+					@if ($tag->id == $Atag->id)
+						<?php $provjera='checked';?>
+					@endif
+				@endforeach
+			<input type="checkbox" name="tags[]" value="{{ $tag->id }}" {{ $provjera }} > {{ $tag->name }}<br>
 			@endforeach
 			<input style="width:1080px;background-color: lightblue;border:none;color:white;font-size:20px;font-family:Arial Black, Gadget, serif;" type="submit" value="{{$submitButtonText}}">
