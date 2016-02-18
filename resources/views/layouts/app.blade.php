@@ -55,14 +55,8 @@
                     <li><a href="{{ url('/articles') }}">Articles</a></li>
                     <li><a href="{{ url('/articles/create') }}">Create</a></li>
                     
-                    @unless(get_defined_vars($article))
-                    <?php $article=0; ?>
 
-                    @endunless
-                    @if ('http://localhost:7777'.$_SERVER['REQUEST_URI'] == url('/articles', $article->id))
-                        <li><a href="{{ url('/articles/edit', $article->id) }}">Edit</a></li>
-                    @endif
-                    <!-- {{url('/articles', $article->id)}} -->
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
