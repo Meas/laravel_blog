@@ -41,9 +41,9 @@ class ArticlesController extends Controller
     public function store(ArticleRequest $request) 
     {	
 
-        $tagIds = $request->input('tags');
+        
         $article = Auth::user()->articles()->create($request->all());
-        $article->tags()->attach($tagIds);
+        $article->tags()->attach($request->input('tags'));
 
         /*session()->flash('flash_message', 'Your article has been created!');*/
 
@@ -62,6 +62,7 @@ class ArticlesController extends Controller
     {   
         $article = Article::findOrFail($id);
         $article->update($request->all());
+        $article->tags()->sync($request->input('tags')); /*attach dodaje, detach oduzima, sync synca*/
         flash()->success('Your article has been updated!');
         return redirect('articles');
     }

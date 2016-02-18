@@ -1,6 +1,6 @@
 @extends ('layouts\app')
 @section ('content')
-<h1>Edit: {{ $article->title}}</h1>
+<div style="margin:20px"><h1>Edit: {{ $article->title}}</h1></div>
 	<hr/>
 	<div style="margin:20px">
 		<form method="POST" action="{{ url('/articles/update', $article->id)}}" >
@@ -12,7 +12,7 @@
 			<b>Edited on:</b><br>
 			<input style="width:1080px;" type="date" name="published_at" id="published_at"><br><br>
 			<input style="width:1080px;background-color: lightblue;border:none;color:white;font-size:20px;font-family:Arial Black, Gadget, serif;" type="submit" value="Update Article"> -->
-			@include ('articles.form', ['submitButtonText' => 'Add Article','body' => $article->body, 'naslov' => $article->title])
+			@include ('articles.form', ['submitButtonText' => 'Update Article','body' => $article->body, 'naslov' => $article->title])
 		</form>
 	</div>
 

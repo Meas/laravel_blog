@@ -1,6 +1,6 @@
 @extends ('layouts\app')
 @section ('content')
-	<h1> Write an article</h1>
+	<div style="margin:20px"><h1> Write an article</h1></div>
 	<hr/>
 	<div style="margin:20px">
 		<form method="POST" action="{{ url('/articles') }}">

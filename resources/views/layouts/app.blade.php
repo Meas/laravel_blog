@@ -24,6 +24,10 @@
             margin-right: 6px;
         }
     </style>
+    <!-- Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/css/select2.min.css" rel="stylesheet" />
+      <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/js/select2.min.js"></script>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default">
@@ -48,6 +52,17 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/articles') }}">Articles</a></li>
+                    <li><a href="{{ url('/articles/create') }}">Create</a></li>
+                    
+                    @unless(get_defined_vars($article))
+                    <?php $article=0; ?>
+
+                    @endunless
+                    @if ('http://localhost:7777'.$_SERVER['REQUEST_URI'] == url('/articles', $article->id))
+                        <li><a href="{{ url('/articles/edit', $article->id) }}">Edit</a></li>
+                    @endif
+                    <!-- {{url('/articles', $article->id)}} -->
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -79,15 +94,22 @@
     
     </div>
     @yield('content')
+
+    
+    
     <!-- JavaScripts -->
+  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <!-- stara scripta za flash bez onog gore @include('flash::message')
     <script>
         $('div.alert').not('.alert-important').delay(3000).slideUp(300)
     </script>
     <script>
         $('#flash-overlay-modal').modal();
-    </script>
+    </script> -->
+    @yield('footer')
 </body>
 </html>
