@@ -52,7 +52,7 @@
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="{{ url('/articles') }}">Articles</a></li>
                     <li><a href="{{ url('/articles/create') }}">Create</a></li>
-                    
+                    @yield('put_edit_li')
 
 
                 </ul>
@@ -87,7 +87,6 @@
     </div>
     @yield('content')
 
-    
     
     <!-- JavaScripts -->
   
