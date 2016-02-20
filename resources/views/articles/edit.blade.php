@@ -31,4 +31,5 @@ var d = new Date();
 	document.getElementById('published_at').value = [year, month, day].join('-'); 
 </script>
 
+
 @stop

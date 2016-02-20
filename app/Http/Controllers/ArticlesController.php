@@ -56,7 +56,16 @@ class ArticlesController extends Controller
     {
         $tags = Tag::get();
         $article = Article::findOrFail($id);
-        return view('articles.edit', compact('article', 'tags'));
+        $user=Auth::user();
+        if ($user->id == $article->user_id)
+        {
+            return view('articles.edit', compact('article', 'tags'));
+        }
+        else 
+        {
+            flash()->error('You do not have the permission to edit the article!'); 
+            return redirect('articles/'.$id);
+        }
     }
     public function update($id, ArticleRequest $request) 
     {   
