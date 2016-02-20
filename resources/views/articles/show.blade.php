@@ -1,6 +1,6 @@
  @extends ('layouts\app')
  @section('content')
-
+<div class="container">
     <h1>{{ $article->title}} </h1>
     <article>
          {{ $article->body }}
@@ -13,6 +13,7 @@
     @endforeach
     </ul>
     @endunless
+</div>
 @endsection
                   
 @section ('put_edit_li')
